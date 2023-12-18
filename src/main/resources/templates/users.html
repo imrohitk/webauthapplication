@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>WebAuthApp</title>
+<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+	<div class="container text-center">
+	<div>
+	<p>
+	Welcome
+	</p>
+	</div>
+		<div>
+			<h1>All Users</h1>
+		</div>
+		<div>
+			<table class="table table-striped table-bordered">
+			<thead class="thead-dark">
+			<tr>
+			<th>User ID</th>
+			<th>E-mail</th>
+			<th>First Name</th>
+			<th>Last Name</th>
+			</tr>
+			</thead>
+			<tbody th:each="user: ${listUsers}">
+			<td th:text="${user.id}">User ID</td>
+			<td th:text="${user.email}">E-mail</td>
+			<td th:text="${user.firstname}">First Name</td>
+			<td th:text="${user.lastname}">Last Name</td>
+			
+			
+			</tbody>
+			</table>
+			<div align="right">
+	<form th:action="@{/logout}" method="post">
+	
+	<input type="submit" value="Sign Out" />
+	</form>
+	</div>
+		</div>
+
+
+	</div>
+
+</body>
+</html>
